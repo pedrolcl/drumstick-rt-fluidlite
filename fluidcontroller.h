@@ -106,7 +106,7 @@ private:
     QMap<QString,QAudioDeviceInfo> m_availableDevices;
     QAudioDeviceInfo m_audioDevice;
 #else
-    QScopedPointer<QAudioSink> m_audioOutput;
+    QAudioSink* m_audioOutput;
     QMap<QString,QAudioDevice> m_availableDevices;
     QAudioDevice m_audioDevice;
 #endif

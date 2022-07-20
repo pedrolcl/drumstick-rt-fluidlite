@@ -31,6 +31,9 @@ include(GNUInstallDirs)
 option(STATIC_DRUMSTICK "Build a static plugin instead of a share one" OFF)
 
 find_package(QT NAMES Qt5 Qt6 REQUIRED)
+if ((CMAKE_SYSTEM_NAME MATCHES "Linux") AND (QT_VERSION_MAJOR EQUAL 6) AND (QT_VERSION VERSION_LESS 6.4))
+    message(WARNING "Unsupported Qt version ${QT_VERSION} for system ${CMAKE_SYSTEM_NAME}")
+endif()
 find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Core Gui Widgets Multimedia)
 find_package(Drumstick 2.7 REQUIRED COMPONENTS RT)
 

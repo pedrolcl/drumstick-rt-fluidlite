@@ -35,7 +35,7 @@ if ((CMAKE_SYSTEM_NAME MATCHES "Linux") AND (QT_VERSION_MAJOR EQUAL 6) AND (QT_V
     message(WARNING "Unsupported Qt version ${QT_VERSION} for system ${CMAKE_SYSTEM_NAME}")
 endif()
 find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Core Gui Widgets Multimedia)
-find_package(Drumstick 2.7 REQUIRED COMPONENTS RT)
+find_package(Drumstick 2.7 REQUIRED COMPONENTS RT Widgets)
 
 add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/FluidLite)
 include(${CMAKE_CURRENT_SOURCE_DIR}/FluidLite/aliases.cmake)
@@ -73,6 +73,7 @@ target_link_libraries(drumstick-rt-fluidlite PRIVATE
     Qt${QT_VERSION_MAJOR}::Widgets
     Qt${QT_VERSION_MAJOR}::Multimedia
     Drumstick::RT
+    Drumstick::Widgets
     fluidlite::fluidlite
 )
 

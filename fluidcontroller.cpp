@@ -20,6 +20,7 @@
 #include <QDir>
 #include <QCoreApplication>
 #include <QFileInfo>
+#include <QStandardPaths>
 
 #include "fluidcontroller.h"
 #include "fluidrenderer.h"
